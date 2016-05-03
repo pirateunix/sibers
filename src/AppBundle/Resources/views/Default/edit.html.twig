@@ -1,0 +1,57 @@
+{% extends 'AppBundle:Default:base.html.twig' %}
+
+{% block content %}
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    <div class="modal-open">
+        <div class="modal-dialog" style="width:800px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="form-signin-heading">Новый пользователь</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">Имя пользователя (латиницей)</span>
+                        {{ form_widget(form.login, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">Имя</span>
+                        {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">Фамилия</span>
+                        {{ form_widget(form.surname, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">Пол</span>
+                        {{ form_widget(form.gender, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">Дата Рождения</span>
+                        {{ form_widget(form.birthday, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">Роль</span>
+                        {{ form_widget(form.role, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    {{ form_widget(form.save, {'attr': {'class': 'btn btn-lg btn-primary', 'type': 'submit'}, 'label': 'Сохранить'}) }}
+                    {{ form_end(form) }}
+                    <button name="send" class="btn btn-lg btn-danger _user_cancel" type="button" data-key="2">Отмена</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'AppBundle:Default:base.html.twig' %}
+
+{% block content %}
+    <div class="modal-open">
+        <div class="modal-dialog" style="width:800px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="form-signin-heading">Новый пользователь</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">Имя пользователя (латиницей)</span>
+                        <span class="form-control">{{ user.login }}</span>
+                    </div>
+
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">Имя</span>
+                        <span class="form-control">{{ user.name }}</span>
+                    </div>
+
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">Фамилия</span>
+                        <span class="form-control">{{ user.surname }}</span>
+                    </div>
+
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">Пол</span>
+                        <span class="form-control">{{ user.gender }}</span>
+                    </div>
+
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">Дата Рождения</span>
+                        <span class="form-control">{{ user.birthday|date('Y-m-d') }}</span>
+                    </div>
+
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">Роль</span>
+                        <span class="form-control">{{ user.role }}</span>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-lg btn-primary _user_edit" data-key="{{ user.id }}">Изменить
+                    </button>
+                    <button name="send" class="btn btn-lg btn-danger _user_cancel" type="button">Отмена</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+{% endblock %}
