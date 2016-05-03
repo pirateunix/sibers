@@ -11,6 +11,8 @@ A Symfony project
 
 ```cd tz/sibers```
 
+```composer install```
+
 ```php bin/console server:run```
 
 [http://localhost:5000/](http://localhost:5000/)
